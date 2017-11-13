@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <div id="root"></div>
   <head>
     <title>Sharebox2</title>
     <%= csrf_meta_tags %>
@@ -10,6 +9,8 @@
   </head>
 
   <body>
+    <div id="root"></div>
+    <div style="clear:both" id="empty div"></div>
     <!-- <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"> -->
     <%= yield %>
   </body>
