@@ -58,6 +58,8 @@ function ConstantToolbar() {
 function FinalRender() {
   return(
       <div id="login_user_status" className="pad10topleftbottom">
+        <ConstantToolbar/>
+        <UserNotSignedIn/>
       </div>
   )
 }
