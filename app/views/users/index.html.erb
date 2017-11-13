@@ -1,0 +1,12 @@
+<%= render '/layouts/toolbar' %>
+
+<h1>List of All Users</h1>
+<table>
+  <% if current_user.admin? %>
+    <th class="tabledefault">SuperAdmin</th>
+    <th class="tabledefault">Admin</th>
+  <% end %>
+  <th class="tabledefault">Name</th>
+  <th class="tabledefault">Email</th>
+  <%= render @users %>
+</table>

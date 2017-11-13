@@ -1,0 +1,35 @@
+<div id="login_user_status" class="pad10topleftbottom">
+  <%= link_to root_path do %>
+    <%=image_tag("home-2160318_1280", class:"img-circle", id:"icon", title: "Home", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' ) %>
+  <% end %>
+  |
+  <% if user_signed_in? %>
+      <%= link_to edit_user_registration_path do %>
+        <%=image_tag("information-2160912_1280", class:"img-circle", id:"icon", title: "Edit Your Information", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' ) %>
+      <% end %>
+      |
+      <%= link_to users_path do %>
+        <%=image_tag("group-2517459_1280", class:"img-circle", id:"icon", title: "See All Users", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' ) %>
+      <% end %>
+      |
+      <%= link_to tasks_path do %>
+        <%=image_tag("write-2160925_1280", class:"img-circle", id:"icon", title: "Tasks", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom') %>
+      <% end %>
+      |
+      <%= link_to destroy_user_session_path, :method => :delete do %>
+        <%=image_tag("shutdown-2297767_1280", class:"img-circle", id:"icon", title: "Signout", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom') %>
+      <% end %>
+      |
+      <%= current_user.email %> -> <%= current_user.name %>
+
+  <% else %>
+      <%= link_to new_user_session_path do %>
+        <%=image_tag("user-2517433_1280", class:"img-circle", id:"icon", title: "Sign-in", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom') %>
+      <% end %>
+      |
+      <%= link_to new_user_registration_path do %>
+        <%=image_tag("user-2517430_1280", class:"img-circle", id:"icon", title: "Sign Up", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom') %>
+      <% end %>
+      <em>Not Signed in.</em>
+  <% end %>
+</div>

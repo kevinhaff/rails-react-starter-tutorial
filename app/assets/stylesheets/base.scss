@@ -1,0 +1,49 @@
+EuroRoman {
+  font-family: 'EuroRoman';
+  src: font-url('EuroRoman.ttf'),
+       font-url('EuroRomanOblique.ttf');
+}
+
+/* $defaultfontfamily: Garamond, serif !important
+If you plan to use this font make sure to remove the comment on the application.html.erb page in the app->assets-> views-> layouts folder*/
+
+$defaultfontfamily: EuroRoman, serif !important;
+$defaultfontsize: 16px !important;
+$defaultfontweight: normal;
+
+div, h1, h2, h3, h4, h5, a, table, th, tr, td, input, em, label, body, html {
+  font-family: $defaultfontfamily;
+  font-weight: $defaultfontweight;
+}
+
+div, h3, a, table, th, tr, td, input, em, label, body, html{
+  font-size: $defaultfontsize;
+}
+
+h1 {
+  font-size: 28px !important;
+}
+
+h2 {
+  font-size: 24px !important;
+}
+
+.tabledefault{
+  padding-right: 10px;
+  text-align: center;
+}
+
+.pad10topleftbottom{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#icon {
+  width: 50px;
+  height: auto;
+}
+
+.floatleft{
+  float: left;
+}
