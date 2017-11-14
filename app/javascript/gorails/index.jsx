@@ -55,15 +55,35 @@ function ConstantToolbar() {
 }
 
 //Renders all the elements in the toolbar
-function FinalRender() {
+function PartialRender() {
+  const node = document.getElementById('root')
+  const userSignedIn = JSON.parse(node.getAttribute('props'));
+
+  if (userSignedIn){
   return(
-      <div id="login_user_status" className="pad10topleftbottom">
-        <ConstantToolbar/>
+      <div id="login_user_status">
+        <UserSignedIn/>
+      </div>
+    )
+  }
+  else {
+    return(
+      <div id="login_user_status">
         <UserNotSignedIn/>
       </div>
+    )
+  }
+}
+
+function FinalRender() {
+  return(
+    <div id="login_user_status" className="pad10topleftbottom">
+      <ConstantToolbar/>
+      <PartialRender/>
+    </div>
   )
 }
 
 ReactDOM.render(
-  <FinalRender/>, document.getElementById('root')
+    <FinalRender />, document.getElementById('root')
 );
