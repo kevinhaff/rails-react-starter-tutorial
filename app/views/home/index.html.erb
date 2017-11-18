@@ -1,1 +1,87 @@
-<!-- <%= render 'layouts/toolbar' %> -->
+  <!-- to render an html page from another use the render tag -->
+  <!-- <%= render 'layouts/toolbar' %> -->
+<div id="page_container">
+  <h1> Welcome to the Website Home Page </h1>
+  <h2> Go to home.scss and turn on the @import statements to see the effects of the hidden css </h2>
+
+  <!-- MapMarker -->
+  <div class='pin'></div>
+  <div class='pulse'></div>
+
+  <!--Opacity -->
+  <div class="pulsate">I can fade in and out</div>
+
+  <div class="confirm_selection" style="overflow-x: hidden; overflow-y: hidden; opacity: 1; ">[ Hover Over me to give me a shadow ]</div>
+
+  <div>
+    <nav>
+      <a href="#" data-menu="A" data-title="I am a drawer"></a>
+      <a href="#" data-menu="B" data-title="I am also a drawer"></a>
+      <a href="#" data-menu="C" data-title="And I am a drawer too!"></a>
+    </nav>
+  </div>
+
+  <!-- Checkbox -->
+  <div>
+    <input type="checkbox" checked />
+    <span></span>
+  </div>
+
+  <!-- Placeholder -->
+  <div class="box">
+    <div id="header">
+      <div id="cont-lock"><i class="material-icons lock">lock</i></div>
+      <div id="bottom-head"><h1 id="logintoregister">Login</h1></div>
+    </div>
+     <form action="" method="post">
+      <div class="group">
+        <input class="inputMaterial" type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+        <div class="group">
+        <input class="inputMaterial" type="password" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+      <button id="buttonlogintoregister" type="submit">Login</button>
+    </form>
+    <div id="footer-box"><p class="footer-text">Not a member?<span class="sign-up"> Sign up now</span></p></div>
+  </div>
+
+  <div id="container-floating">
+    <a href="#" target="_blank"><span class="profile-name">Test Item</span></a>
+    <div id="container-a">
+      <div id="badge">
+      </div>
+      <div id="letter">
+        <a href="#"><span>S</span></a>
+      </div>
+    </div>
+
+    <a href="#" target="_blank"><div class="nds nd1" data-toggle="tooltip" data-placement="left" data-original-title="Codepen"></div></a>
+    <a href="#" target="_blank"><div class="nds nd3" data-toggle="tooltip" data-placement="left" data-original-title="Twitter"></div></a>
+   <a href="#" target="_blank"><div class="nds nd4" data-toggle="tooltip" data-placement="left" data-original-title="G+"></div></a>
+  </div>
+
+  <!-- PlaceholderShrink  -->
+  <div class="field">
+    <label class="field__label" for="input-email">Email address</label>
+    <input class="field__input one-column-form__input--text" id="input-email" type="email" placeholder="Email address">
+  </div>
+
+</div>
+
+
+  <script>
+  $('.field__input').on('input', function() {
+    var $field = $(this).closest('.field');
+    if (this.value) {
+      $field.addClass('field--not-empty');
+    } else {
+      $field.removeClass('field--not-empty');
+    }
+  });
+  </script>

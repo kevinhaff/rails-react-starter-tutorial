@@ -10,23 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require dropzone
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
-// for displaying tooplips
-$(document).on('turbolinks:load', function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-// to hide a submit button next to a checkbox
-jQuery.fn.submitOnCheck = function() {
-	this.find('input[type=submit]').remove();
-	this.find('input[type=checkbox]').click(function() {
-		$(this).parent('form').submit();
-	});
-	return this;
-}

@@ -1,26 +1,26 @@
 <!-- in order to dynamically change the id you can include the ruby tag with a .to_s to convert it to a string -->
 
 <%= form_for user, remote: true do |f| %>
-  <tbody>
-    <tr class="tabledefault edit_user" id="edit_user_<%= user.id.to_s %>">
-        <% if current_user.superadmin %>
-          <td> <%= f.check_box :superadmin, class:"checkbox" %> <%= f.submit "Update" %> </td>
-          <td> <%= f.check_box :admin, class:"checkbox" %> <%= f.submit "Update" %> </td>
-          <td> <%= f.label :admin, user.name %> </td>
-          <td> <%= f.label :admin, user.email %> </td>
-          <td> <%= link_to "Remove", removed_user_path(user), :method => :delete, data: {confirm: "Are you sure?"}, remote: true %> </td>
-        <% elsif current_user.admin? && !current_user.superadmin %> </td>
-          <td> <%= f.check_box :superadmin, class:"checkbox", disabled: true %> </td>
-          <td> <%= f.submit "Update", disabled: true %></td>
-          <td> <%= f.check_box :admin, class:"checkbox", disabled: true %> </td>
-          <td> <%= f.submit "Update", disabled: true %> </td>
-          <td> <%= f.label :admin, user.name %> </td>
-          <td> <%= f.label :admin, user.email %> </td>
-          <td> <%= link_to "Remove", removed_user_path(user), :method => :post, data: {confirm: "Are you sure?"},remote: true %>
-       <% else %>
-          <td> <%= f.label :admin, user.name %> </td>
-          <td> <%= f.label :admin, user.email %> </td>
-      <% end %>
-  </tr>
-  </tbody>
+    <% if current_user.superadmin %>
+    <div>
+      <%= f.check_box :superadmin, class:"checkbox" %> <%= f.submit "Update" %>
+    </div>
+    <div>
+      <%= f.check_box :admin, class:"checkbox" %> <%= f.submit "Update" %>
+    </div>
+      <%= f.label :admin, user.name %>
+      <%= f.label :admin, user.email %>
+      <%= link_to "Remove", removed_user_path(user), :method => :delete, data: {confirm: "Are you sure?"}, remote: true %>
+    <% elsif current_user.admin? && !current_user.superadmin %>
+      <%= f.check_box :superadmin, class:"checkbox", disabled: true %>
+      <%= f.submit "Update", disabled: true %>
+      <%= f.check_box :admin, class:"checkbox", disabled: true %>
+      <%= f.submit "Update", disabled: true %>
+      <%= f.label :admin, user.name %>
+      <%= f.label :admin, user.email %>
+      <%= link_to "Remove", removed_user_path(user), :method => :post, data: {confirm: "Are you sure?"},remote: true %>
+   <% else %>
+      <%= f.label :admin, user.name %>
+      <%= f.label :admin, user.email %>
+  <% end %>
 <% end %>

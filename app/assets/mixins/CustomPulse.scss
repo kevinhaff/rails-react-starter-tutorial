@@ -1,0 +1,70 @@
+$animationcount: infinite;
+$pulsatetimetype: pulsate 2s linear;
+$scale0percent: scale(0.1, 0.1);
+$scale100percent: scale(1, 1);
+$animationdelay: 1.1s;
+$pulsecolor: 0 0 1px 2px #000;
+
+@mixin pulsation{
+  0% {
+    -webkit-transform: $scale0percent;
+    -moz-transform: $scale0percent;
+    -o-transform: $scale0percent;
+    -ms-transform: $scale0percent;
+    transform: $scale0percent;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    -webkit-transform: $scale100percent;
+    -moz-transform: $scale100percent;
+    -o-transform: $scale100percent;
+    -ms-transform: $scale100percent;
+    transform: $scale100percent;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+
+.pulse:hover {
+  content: "a";
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  -webkit-animation: $pulsatetimetype;
+  -moz-animation: $pulsatetimetype;
+  -o-animation: $pulsatetimetype;
+  -ms-animation: $pulsatetimetype;
+  animation: $pulsatetimetype;
+  -webkit-animation-iteration-count: $animationcount;
+  -moz-animation-iteration-count: $animationcount;
+  -o-animation-iteration-count: $animationcount;
+  -ms-animation-iteration-count: $animationcount;
+  animation-iteration-count: $animationcount;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-box-shadow: $pulsecolor;
+  box-shadow: $pulsecolor;
+  -webkit-animation-delay: $animationdelay;
+  -moz-animation-delay: $animationdelay;
+  -o-animation-delay: $animationdelay;
+  -ms-animation-delay: $animationdelay;
+  animation-delay: $animationdelay;
+}
+
+@-webkit-keyframes, @-moz-keyframes pulsate {
+  @include pulsation;
+}
+@keyframes pulsate {
+  @include pulsation;
+}

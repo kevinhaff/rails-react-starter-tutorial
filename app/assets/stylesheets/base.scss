@@ -33,17 +33,32 @@ h2 {
   text-align: center;
 }
 
-.pad10topleftbottom{
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
+.margin10topleftbottom{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 #icon {
   width: 50px;
   height: auto;
+  z-index: 1;
 }
 
 .floatleft{
   float: left;
+}
+
+ul,ol,li #nobullet{
+  list-style: none;
+  padding: 0;
+}
+
+#toolbar {
+  width: 20%;
+  position: absolute;
+}
+
+#page_container{
+  margin-left: 20%;
 }

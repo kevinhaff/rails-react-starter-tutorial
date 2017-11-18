@@ -1,3 +1,14 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// turn the following css items off to prevent messing up the rest of the pages
+// @import '../mixins/MapMarker';
+// @import '../mixins/Opacity';
+// @import '../mixins/TextDisplayOnHover';
+// @import '../mixins/TextColorChange';
+// @import '../mixins/PlaceholderShrink';
+// @import '../mixins/Placeholder';
+// @import '../mixins/Checkbox';
+@import '../mixins/CustomPulse';
