@@ -45,6 +45,11 @@ h2 {
   z-index: 1;
 }
 
+// if the span contains an id with the word nav in it
+span [id*="nav"]{
+  display:block;
+}
+
 .floatleft{
   float: left;
 }
@@ -52,13 +57,23 @@ h2 {
 ul,ol,li #nobullet{
   list-style: none;
   padding: 0;
+  overflow: hidden;
+}
+
+.flipper{
+  opacity: .5;
+}
+
+.flipper:hover{
+  transform: rotateY(30deg);
+  opacity: 1;
+}
+
+.prehide{
+  opacity: 0;
 }
 
 #toolbar {
-  width: 20%;
-  position: absolute;
-}
-
-#page_container{
-  margin-left: 20%;
+  position: relative;
+  display: inline-block;
 }

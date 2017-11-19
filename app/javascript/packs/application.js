@@ -15,3 +15,11 @@ jQuery.fn.submitOnCheck = function() {
 	});
 	return this;
 };
+
+$("span[id^= 'nav']").hover( function() {
+  $("span[id^= 'nav']").removeClass("prehide").addClass("animated flipInZ");
+})
+
+$("span[id^= 'nav']").focusout( function() {
+  $("span[id^= 'nav']").addClass("prehide").removeClass("animated flipInZ");
+})

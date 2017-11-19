@@ -1,0 +1,63 @@
+.animated{
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: block;
+}
+
+$perspective: perspective(400px);
+
+@mixin flipInZnew{
+  0% {
+     -webkit-transform: $perspective rotateZ(90deg);
+     -moz-transform: $perspective rotateZ(90deg);
+     -o-transform: $perspective rotateZ(90deg);
+     -ms-transform: $perspective rotateZ(90deg);
+     transform: $perspective rotateZ(90deg);
+     opacity: 0;
+  }
+  40% {
+     -webkit-transform: $perspective rotateZ(-10deg);
+     -moz-transform: $perspective rotateZ(-10deg);
+     -o-transform: $perspective rotateZ(-10deg);
+     -ms-transform: $perspective rotateZ(-10deg);
+     transform: $perspective rotateZ(-10deg);
+  }
+  70% {
+     -webkit-transform: $perspective rotateZ(10deg);
+     -moz-transform: $perspective rotateZ(10deg);
+     -o-transform: $perspective rotateZ(10deg);
+     -ms-transform: $perspective rotateZ(10deg);
+     transform: $perspective rotateZ(10deg);
+  }
+  100% {
+     -webkit-transform: $perspective rotateZ(0deg);
+     -moz-transform: $perspective rotateZ(0deg);
+     -o-transform: $perspective rotateZ(0deg);
+     -ms-transform: $perspective rotateZ(0deg);
+     transform: $perspective rotateZ(0deg);
+     opacity: 1;
+  }
+}
+
+@-webkit-keyframes, @-moz-keyframes flipInZ {
+  @include flipInZnew;
+}
+
+@keyframes flipInZ {
+  @include flipInZnew;
+}
+
+.flipInZ {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInZ;
+  backface-visibility: visible !important;
+  animation-name: flipInZ;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInZ;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInZ;
+  -ms-backface-visibility: visible !important;
+  -ms-animation-name: flipInZ;
+}
