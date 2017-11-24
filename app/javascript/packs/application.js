@@ -4,18 +4,58 @@ import GoRails from 'gorails';
 
 // for displaying tooltips
 $(document).on('turbolinks:load', function(){
-    $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
+  $('input.submitButton[type=submit]').remove();
+  //users page reload
+  var superAdmin = $('input.cb-value.superAdmintrue').parent('.toggle-btn');
+  var Admin = $('input.cb-value.Admintrue').parent('.toggle-btn');
+  if ($(superAdmin).val('true')) {
+    $(superAdmin).addClass('active');
+  }
+  else{
+    $(superAdmin).removeClass('active');
+  }
+
+  if ($(Admin).val('true')) {
+    $(Admin).addClass('active');
+  }
+  else{
+    $(Admin).removeClass('active');
+  }
+  //task page reload
+  var taskComplete = $('input.taskCompletetrue').parent('.toggle-btn');
+
+  if ($(taskComplete).val('true')) {
+    $(taskComplete).addClass('active');
+  }
+  else{
+    $(taskComplete).removeClass('active');
+  }
 });
 
 // to hide a submit button next to a checkbox
 jQuery.fn.submitOnCheck = function() {
 	this.find('input[type=submit]').remove();
 	this.find('input[type=checkbox]').click(function() {
-		$(this).parent('form').submit();
+		$(this).closest('form').submit();
 	});
 	return this;
 };
 
-$("span[id^= 'nav']").hover( function() {
-  $("span[id^= 'nav']").removeClass("prehide").addClass("animated flipInZ");
+$('.cb-value').click(function() {
+  var mainParent = $(this).parent('.toggle-btn');
+  if($(mainParent).find('input.cb-value').is(':checked')) {
+    $(mainParent).addClass('active');
+  } else {
+    $(mainParent).removeClass('active');
+  }
 })
+
+$('.field__input').on('input', function() {
+  var $field = $(this).closest('.field');
+  if (this.value) {
+    $field.addClass('field--not-empty');
+  } else {
+    $field.removeClass('field--not-empty');
+  }
+});

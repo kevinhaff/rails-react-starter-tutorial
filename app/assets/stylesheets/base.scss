@@ -60,6 +60,16 @@ ul,ol,li #nobullet{
   overflow: hidden;
 }
 
+span{
+  display: inline-block;
+  position: relative;
+}
+
+.navpadding{
+  padding-right: 5px;
+}
+
+
 .flipper{
   opacity: .5;
 }
@@ -71,9 +81,4 @@ ul,ol,li #nobullet{
 
 .prehide{
   opacity: 0;
-}
-
-#toolbar {
-  position: relative;
-  display: inline-block;
 }

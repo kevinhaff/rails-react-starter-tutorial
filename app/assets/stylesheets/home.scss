@@ -5,10 +5,8 @@
 
 // turn the following css items off to prevent messing up the rest of the pages
 // @import '../mixins/MapMarker';
-// @import '../mixins/Opacity';
-// @import '../mixins/TextDisplayOnHover';
-// @import '../mixins/TextColorChange';
-// @import '../mixins/PlaceholderShrink';
-// @import '../mixins/Placeholder';
-// @import '../mixins/Checkbox';
+@import '../mixins/Opacity';
+@import '../mixins/TextColorChange';
+@import '../mixins/PlaceholderShrink';
+@import '../mixins/Checkbox';
 @import '../mixins/CustomPulse';

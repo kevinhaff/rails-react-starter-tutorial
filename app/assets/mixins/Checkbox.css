@@ -1,64 +1,49 @@
-
-input[type=checkbox] {
-  cursor: pointer;
-  height: 60px;
-  margin:8px 0 0;
-  position: absolute;
-  opacity: 0;
-  width: 60px;
-  z-index: 2;
-}
-
-input[type=checkbox] + span {
-  background: #e74c3c;
-  border-radius: 50%;
+.toggle-btn{
+  width: 40px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 25px;
   display: inline-block;
-  height: 60px;
-  margin:8px 0 0;
-  position:relative;
-  width: 60px;
-  transition: all .2s ease;
-}
+  position: relative;
+  background : url('/assets/x.png') no-repeat 25px center #e74c3c;
+  cursor: pointer;
+  -webkit-transition: background-color .40s ease-in-out;
+  -moz-transition: background-color .40s ease-in-out;
+  -o-transition: background-color .40s ease-in-out;
+  transition: background-color .40s ease-in-out;
+  cursor:pointer;
 
-input[type=checkbox] + span::before, input[type=checkbox] + span::after{
-  background:#fff;
-  content:'';
-  display:block;
-  position:absolute;
-  width:8px;
-  transition: all .2s ease;
-}
+  &.active{
+    background : url('/assets/checkbox.png') no-repeat 5px center #2ecc71;
+    .round-btn{
+      left: 22.5px;
+    }
+  }
 
-input[type=checkbox] + span::before{
-  height:32px;
-  left:26px;
-  top:14px;
-  -webkit-transform:rotate(-45deg);
-  transform:rotate(-45deg);
-}
-
-input[type=checkbox] + span::after{
-  height:32px;
-  right:26px;
-  top:14px;
-  -webkit-transform:rotate(45deg);
-  transform:rotate(45deg);
-}
-
-input[type=checkbox]:checked + span {
-  background:#2ecc71;
-}
-
-input[type=checkbox]:checked + span::before{
-  height: 18px;
-  left: 18px;
-  top: 26px;
-  -webkit-transform:rotate(-47deg);
-  transform:rotate(-47deg);
-}
-
-input[type=checkbox]:checked + span::after{
-  height: 30px;
-  right: 22px;
-  top: 16px;
+  .round-btn{
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 2.5px;
+    top: 50%;
+    margin-top: -7.5px;
+    -webkit-transition: all .30s ease-in-out;
+  -moz-transition: all .30s ease-in-out;
+  -o-transition: all .30s ease-in-out;
+  transition: all .30s ease-in-out;
+  }
+  .cb-value{
+    position: absolute;
+    left:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 9;
+    cursor:pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
 }

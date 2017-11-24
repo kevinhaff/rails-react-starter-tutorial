@@ -2,19 +2,22 @@
 
 <%= form_for user, remote: true do |f| %>
     <% if current_user.superadmin %>
-    <div>
-      <%= f.check_box :superadmin, class:"checkbox" %> <%= f.submit "Update" %>
+    <div class="toggle-btn">
+      <%= f.check_box :superadmin, class:"cb-value superAdmin#{user.superadmin}" %>
+      <span class="round-btn"></span>
+      <%= f.submit "Update", class: "submitButton" %>
     </div>
-    <div>
-      <%= f.check_box :admin, class:"checkbox" %> <%= f.submit "Update" %>
+    <div class="toggle-btn">
+      <%= f.check_box :admin, class:"cb-value Admin#{user.admin}", value: user.admin? %>
+      <span class="round-btn"></span>
     </div>
       <%= f.label :admin, user.name %>
       <%= f.label :admin, user.email %>
       <%= link_to "Remove", removed_user_path(user), :method => :delete, data: {confirm: "Are you sure?"}, remote: true %>
     <% elsif current_user.admin? && !current_user.superadmin %>
-      <%= f.check_box :superadmin, class:"checkbox", disabled: true %>
+      <%= f.check_box :superadmin, class:"cb-value", isChecked: user.superadmin, disabled: true %>>
       <%= f.submit "Update", disabled: true %>
-      <%= f.check_box :admin, class:"checkbox", disabled: true %>
+        <%= f.check_box :admin, class:"cb-value", isChecked: user.admin, disabled: true %>
       <%= f.submit "Update", disabled: true %>
       <%= f.label :admin, user.name %>
       <%= f.label :admin, user.email %>
