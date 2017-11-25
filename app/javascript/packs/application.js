@@ -6,26 +6,29 @@ import GoRails from 'gorails';
 $(document).on('turbolinks:load', function(){
   $('[data-toggle="tooltip"]').tooltip();
   $('input.submitButton[type=submit]').remove();
+
   //users page reload
   var superAdmin = $('input.cb-value.superAdmintrue').parent('.toggle-btn');
   var Admin = $('input.cb-value.Admintrue').parent('.toggle-btn');
-  if ($(superAdmin).val('true')) {
+
+  if ($(superAdmin)) {
     $(superAdmin).addClass('active');
   }
   else{
     $(superAdmin).removeClass('active');
   }
 
-  if ($(Admin).val('true')) {
+  if ($(Admin)) {
     $(Admin).addClass('active');
   }
   else{
     $(Admin).removeClass('active');
   }
+
   //task page reload
   var taskComplete = $('input.taskCompletetrue').parent('.toggle-btn');
 
-  if ($(taskComplete).val('true')) {
+  if ($(taskComplete)) {
     $(taskComplete).addClass('active');
   }
   else{
@@ -51,6 +54,7 @@ $('.cb-value').click(function() {
   }
 })
 
+// for input boxes with placeholders
 $('.field__input').on('input', function() {
   var $field = $(this).closest('.field');
   if (this.value) {
