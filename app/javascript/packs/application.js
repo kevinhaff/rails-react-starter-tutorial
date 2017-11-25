@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import GoRails from 'gorails';
+import Toolbar from 'components/toolbar';
 
 // for displaying tooltips
 $(document).on('turbolinks:load', function(){
