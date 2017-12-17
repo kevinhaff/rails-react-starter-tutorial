@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Toolbar from 'components/toolbar';
+// import Users from 'components/users';
+// import Tasks from 'components/tasks';
 
 // for displaying tooltips
 $(document).on('turbolinks:load', function(){
