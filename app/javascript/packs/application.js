@@ -4,7 +4,18 @@ import Toolbar from 'components/toolbar';
 // import Users from 'components/users';
 // import Tasks from 'components/tasks';
 
-// for displaying tooltips
+// iterating over multiple HTML elements
+// By adding a parameter to the function it iterates over all instances
+// index will keep the list and value will give the entire element selected
+
+// Example:
+// $('.className').each(function(index, value){
+//     $(this).checkFunction();
+// }
+
+// jQuery.fn.checkFunction = function() {};
+
+// for all elements which occur right as the page loads
 $(document).on('turbolinks:load', function(){
   $('[data-toggle="tooltip"]').tooltip();
   $('input.submitButton[type=submit]').remove();
@@ -36,11 +47,19 @@ $(document).on('turbolinks:load', function(){
   else{
     $(taskComplete).removeClass('active');
   }
+
+  // for input boxes with information pre determined
+  $(".field__input").each(function(index, value) {
+    if ( $(this).val() != "") {
+      $(this).closest('.field').addClass('field--not-empty')
+    }
+  })
+
 });
 
-// to hide a submit button next to a checkbox
+// to hide a submit button next to a checkbox and change the value of the checkbox
 jQuery.fn.submitOnCheck = function() {
-	this.find('input[type=submit]').remove();
+	this.find('input[type=submit][task=submititem]').remove();
 	this.find('input[type=checkbox]').click(function() {
 		$(this).closest('form').submit();
 	});
@@ -56,7 +75,8 @@ $('.cb-value').click(function() {
   }
 })
 
-// for input boxes with placeholders
+
+// when input boxes have information entered with placeholders
 $('.field__input').on('input', function() {
   var $field = $(this).closest('.field');
   if (this.value) {

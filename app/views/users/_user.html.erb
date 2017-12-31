@@ -5,7 +5,7 @@
     <div class="toggle-btn">
       <%= f.check_box :superadmin, class:"cb-value superAdmin#{user.superadmin}" %>
       <span class="round-btn"></span>
-      <%= f.submit "Update", class: "submitButton" %>
+      <%= f.submit "Update", task:"submititem" %>
     </div>
     <div class="toggle-btn">
       <%= f.check_box :admin, class:"cb-value Admin#{user.admin}", value: user.admin? %>
@@ -16,9 +16,9 @@
       <%= link_to "Remove", removed_user_path(user), :method => :delete, data: {confirm: "Are you sure?"}, remote: true %>
     <% elsif current_user.admin? && !current_user.superadmin %>
       <%= f.check_box :superadmin, class:"cb-value", isChecked: user.superadmin, disabled: true %>>
-      <%= f.submit "Update", disabled: true %>
+      <%= f.submit "Update", task:"submititem", disabled: true %>
         <%= f.check_box :admin, class:"cb-value", isChecked: user.admin, disabled: true %>
-      <%= f.submit "Update", disabled: true %>
+      <%= f.submit "Update", task:"submititem", disabled: true %>
       <%= f.label :admin, user.name %>
       <%= f.label :admin, user.email %>
       <%= link_to "Remove", removed_user_path(user), :method => :post, data: {confirm: "Are you sure?"},remote: true %>

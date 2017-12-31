@@ -2,7 +2,7 @@
   <div class="toggle-btn">
     <%= f.check_box :complete, class:"cb-value taskComplete#{task.complete}" %>
     <span class="round-btn"></span>
-    <%= f.submit "Update", class: "submitButton" %>
+    <%= f.submit "Update", task:"submititem" %>
   </div>
   <%= f.label :complete, task.name %>
   <%= link_to "Remove", task, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>

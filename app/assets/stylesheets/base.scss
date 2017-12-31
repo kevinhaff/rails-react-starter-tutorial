@@ -18,6 +18,14 @@ div, h1, h2, h3, h4, h5, a, table, th, tr, td, input, em, label, body, html, i {
   line-height: $defaultlineheight;
 }
 
+input[type="submit"]{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  background-color: #8adcd9;
+  font-size: 18px !important;
+}
+
 div, h3, a, table, th, tr, td, input, em, label, body, html, i{
   font-size: $defaultfontsize;
 }
