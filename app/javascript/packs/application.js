@@ -1,53 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Toolbar from 'components/toolbar';
-// import Users from 'components/users';
-// import Tasks from 'components/tasks';
-
-// iterating over multiple HTML elements
-// By adding a parameter to the function it iterates over all instances
-// index will keep the list and value will give the entire element selected
-
-// Example:
-// $('.className').each(function(index, value){
-//     $(this).checkFunction();
-// }
-
-// jQuery.fn.checkFunction = function() {};
+import Users from 'components/users';
+import Tasks from 'components/tasks';
 
 // for all elements which occur right as the page loads
 $(document).on('turbolinks:load', function(){
   $('[data-toggle="tooltip"]').tooltip();
   $('input.submitButton[type=submit]').remove();
 
-  //users page reload
-  var superAdmin = $('input.cb-value.superAdmintrue').parent('.toggle-btn');
-  var Admin = $('input.cb-value.Admintrue').parent('.toggle-btn');
-
-  if ($(superAdmin)) {
-    $(superAdmin).addClass('active');
-  }
-  else{
-    $(superAdmin).removeClass('active');
-  }
-
-  if ($(Admin)) {
-    $(Admin).addClass('active');
-  }
-  else{
-    $(Admin).removeClass('active');
-  }
-
-  //task page reload
-  var taskComplete = $('input.taskCompletetrue').parent('.toggle-btn');
-
-  if ($(taskComplete)) {
-    $(taskComplete).addClass('active');
-  }
-  else{
-    $(taskComplete).removeClass('active');
-  }
-
+  //index and value allow function to realize HTML is an array not a single element
   // for input boxes with information pre determined
   $(".field__input").each(function(index, value) {
     if ( $(this).val() != "") {
@@ -74,7 +36,6 @@ $('.cb-value').click(function() {
     $(mainParent).removeClass('active');
   }
 })
-
 
 // when input boxes have information entered with placeholders
 $('.field__input').on('input', function() {

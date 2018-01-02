@@ -17,18 +17,18 @@ $(document).on('turbolinks:load', function(){
   }
 });
 
-function Tasks(taskComplete) {
-  return (
-<form class="edit_task" id="edit_task_{taskComplete}">
-  <div class="toggle-btn">
-    <input class="cb-value taskComplete{taskComplete}" type="checkbox" value="1" name="task[complete]" id="task_complete">
-    <span class="round-btn"></span>
-    <input type="submit" name="commit" value="Update" class="submitButton" data-disable-with="Update">
-  </div>
-</form>
-  )
-}
-
-ReactDOM.render(
-    <Tasks/>, document.getElementById('root')
-);
+// function Tasks(taskComplete) {
+//   return (
+// <form class="edit_task" id="edit_task_{taskComplete}">
+//   <div class="toggle-btn">
+//     <input class="cb-value taskComplete{taskComplete}" type="checkbox" value="1" name="task[complete]" id="task_complete"> </input>
+//     <span class="round-btn"></span>
+//     <input type="submit" name="commit" value="Update" class="submitButton" data-disable-with="Update"></input>
+//   </div>
+// </form>
+//   )
+// }
+//
+// ReactDOM.render(
+//     <Tasks/>, document.getElementById('root')
+// );
